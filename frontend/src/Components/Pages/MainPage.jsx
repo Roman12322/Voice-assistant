@@ -54,7 +54,7 @@ export const MainPage = () => {
   return (
     <>
       <h2 className="header__name">
-        (.)(.) Наш помошник (Надо подумать над названием)
+        GeekSupport
       </h2>
       <div className="main">
         <div className="mainBlock">

@@ -1,5 +1,6 @@
 # python app.py >> /tmp/info.log 2>> /tmp/error.log
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 # from model import get_extention_text
 # from audio import get_text_from_audiofile
@@ -7,6 +8,9 @@ import time
 import os
 
 app = Flask(__name__)
+CORS(app)
+
+app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024
 
 
 @app.route("/")
@@ -28,19 +32,18 @@ def upload_file():
         file.save(file_path)
         print("File saved")
 
-        # Handle recieved audio
-        # Print - debug, remove before prod
-        # print(handle_audio(file_path))
+        # response = handle_audio(file_path)
 
         return jsonify({"message": f"File {unique_filename} saved successfully"}), 200
+        # return jsonify({"text": f"{response}"}), 200
     except Exception as e:
         print(f"Error handling file upload: {e}")
         return jsonify({"error": "Internal Server Error"}), 500
 
 
 # def handle_audio(audio_path):
-#    user_message = get_text_from_audiofile(path=audio_path)
-#    return get_extention_text(user_message=user_message)
+#     user_message = get_text_from_audiofile(path=audio_path)
+#     return get_extention_text(user_message=user_message)
 
 
 if __name__ == "__main__":
