@@ -2,3 +2,4 @@ python/download/*
 python/.venv
 python/__pycache__
 frontend/node_modules
+downloads/
