@@ -1,0 +1,16 @@
+services:
+  python-server:
+    build:
+      context: ./python
+    ports:
+      - 5000:5000
+    volumes:
+      - ./downloads:/app/downloads
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - 5173:5173
+    environment:
+      - VITE_HOST=0.0.0.0

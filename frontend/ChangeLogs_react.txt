@@ -1,0 +1,4 @@
+12.11.2023 - Поменял title и стили каркаса и текста (App.jsx, index.css, main.jsx);
+13.11.2023 - Настроил axios для работы с запросами (App.jsx)
+15.11.2023 - Добавил drug&drop и пост запрос для отправки пользователем
+             файла на сервер (App.jsx, MainPage.jsx, MainPage.css, useStateContext.jsx)
