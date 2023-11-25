@@ -5,6 +5,5 @@ export const api = axios.create({
 })
 
 export const fileSharing = async () => {
-  let res = await api.get('/upload')
-  return res.data;
+  return await api.get('/upload')
 }

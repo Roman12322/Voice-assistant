@@ -37,7 +37,8 @@ export const MainPage = () => {
       );
       setAlertTitleError("");
       setAlertContentError("");
-      // setText(fileSharing()); <- return after ML available 
+      fileSharing()
+      //setText(fileSharing());
     } else {
       setAlertTitleError("Error");
       setAlertContentError(
