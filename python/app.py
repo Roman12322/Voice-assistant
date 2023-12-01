@@ -2,9 +2,6 @@ from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from model import get_extention_text
 from audio import get_text_from_audiofile
-import time
-import os
-
 
 app = FastAPI()
 
@@ -20,9 +17,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["GET", "POST", "OPTIONS", "DELETE", "PATCH", "PUT"],
-    allow_headers=["Content-Type", "Set-Cookie", "Access-Control-Allow-Headers", "Access-Control-Allow-Origin",
-                   "Authorization"],
+    allow_methods=['*'],
+    allow_headers=['*'],
 )
 
 
@@ -31,7 +27,7 @@ def home():
     return {"name": "Steve", "age": 20}
 
 
-@app.post("/upload")
+@app.post("/uploading_file")
 async def upload_file(file: UploadFile = File(...)):
     try:
         print("File saved")

@@ -28,7 +28,7 @@ export const MainPage = () => {
       const formData = new FormData();
       formData.append("file", files[0]);
       formData.append("userId", 1);
-      api.post("/upload", formData);
+      api.post("/uploading_file", formData);
       setAlertTitle("success");
       setAlertContent("Ваш файл успешно отправлен!");
       setAlertTitleInfo("Info");
@@ -37,8 +37,8 @@ export const MainPage = () => {
       );
       setAlertTitleError("");
       setAlertContentError("");
-      fileSharing()
-      //setText(fileSharing());
+      fileSharing();
+      // setText(fileSharing());
     } else {
       setAlertTitleError("Error");
       setAlertContentError(
