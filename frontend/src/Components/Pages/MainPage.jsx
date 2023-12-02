@@ -35,6 +35,8 @@ export const MainPage = () => {
       setAlertContentInfo(
         "Идет обработка запроса. Данный процесс может занять некоторое время. Не закрывайте и не перезагружайте страницу"
       );
+      api.get('http://127.0.0.1:5000/').then(
+      response => {setText(response.data.name + ' ' + response.data.age)})
       setAlertTitleError("");
       setAlertContentError("");
       fileSharing();
